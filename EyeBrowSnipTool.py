@@ -59,9 +59,9 @@ while True:
                         print("screenshot taken")
                         isBlink = False  # Reset flag after screenshot
 
-        cTime = time.time()  # Current time
-        fps = 1 / (cTime - pTime)  # Calculate FPS
-        pTime = cTime  # Update previous time
+    cTime = time.time()  # Current time
+    fps = 1 / (cTime - pTime)  # Calculate FPS
+    pTime = cTime  # Update previous time
 
     # Display FPS on screen
     cv2.putText(img, f'FPS:{int(fps)}', (10, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
