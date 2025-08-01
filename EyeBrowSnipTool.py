@@ -63,8 +63,12 @@ while True:
         fps = 1 / (cTime - pTime)  # Calculate FPS
         pTime = cTime  # Update previous time
 
-        # Display FPS on screen
-        cv2.putText(img, f'FPS:{int(fps)}', (10, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+    # Display FPS on screen
+    cv2.putText(img, f'FPS:{int(fps)}', (10, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
 
-        cv2.imshow('MyFace', img)  # Show the processed image
-        cv2.waitKey(1)  # Wait for key press to update frame
+    cv2.imshow('MyFace', img)  # Show the processed image
+    if cv2.waitKey(1) & 0xff == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
